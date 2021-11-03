@@ -3,11 +3,21 @@
 // increment the count variable when the button is clicked
 // change the count-el in the HTML to reflect the new count
 
-let count = 0
+let saveEl = document.getElementById("save-el");
+let countEl = document.getElementById("count-el");
+let count = 0;
 
 function incrementCounter() {
-  count = count + 1
-  document.getElementById("count-el").innerText = count
+  count += 1
+  countEl.innerText = count;
 }
 
-// incrementCounter()
+// 1. create a function, save(), which logs out the count when it's called
+// 2. Create a variable that contains both the count and the dash separator, i.e. "12 - "
+// 3. Render the variable in the saveEl using innerText
+// NB: Make sure to not delete the existing content of the paragraph
+
+function save() {
+  let savedCounter = count + " - "
+  saveEl.textContent += savedCounter
+}
