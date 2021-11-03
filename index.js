@@ -1,10 +1,13 @@
-let bonusPoints = 50
+// initialize the count as 0
+// listen for clickes on the increment button
+// increment the count variable when the button is clicked
+// change the count-el in the HTML to reflect the new count
 
-bonusPoints = bonusPoints * 2
-console.log(bonusPoints);
+let count = 0
 
-bonusPoints = (bonusPoints / 2) / 2
-console.log(bonusPoints);
+function incrementCounter() {
+  count = count + 1
+  document.getElementById("count-el").innerText = count
+}
 
-bonusPoints = bonusPoints + 50
-console.log(bonusPoints);
+// incrementCounter()
