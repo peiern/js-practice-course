@@ -20,4 +20,6 @@ function incrementCounter() {
 function save() {
   let savedCounter = count + " - "
   saveEl.textContent += savedCounter
+  countEl.textContent = 0
+  count = 0
 }
