@@ -26,4 +26,7 @@ function startGame(){
 
 function newCard() {
   console.log("Drawing new card");
+  const card = 3
+  sum += card
+  startGame()
 }
