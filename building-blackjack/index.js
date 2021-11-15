@@ -7,10 +7,15 @@ let message = ""
 
 let firstCard = Math.floor(Math.random() * 12)
 let secondCard = Math.floor(Math.random() * 12)
+let cards = [firstCard, secondCard]
 let sum = firstCard + secondCard
 
-function startGame(){
-  cardsEl.textContent = "Cards: " + firstCard + " " + secondCard
+function startGame() {
+  renderGame()
+}
+
+function renderGame(){
+  cardsEl.textContent = "Cards: " + cards[0] + " " + cards[1]
   sumEl.textContent = "Sum: " + sum
   if (sum <= 20) {
     message = "Do you want to draw a new card?"
@@ -28,5 +33,5 @@ function newCard() {
   console.log("Drawing new card");
   const card = 3
   sum += card
-  startGame()
+  renderGame()
 }
