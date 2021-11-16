@@ -1,11 +1,19 @@
+let player = {
+  name: "poppy",
+  chips: 200
+}
+
 const messageEl = document.querySelector("#message-el")
 const sumEl = document.querySelector("#sum-el")
 const cardsEl = document.querySelector("#cards-el")
+const playerEl = document.querySelector("#player-el")
 let hasBlackJack = false
 let isAlive = false
 let message = ""
 let cards = []
 let sum = 0
+
+playerEl.textContent = player.name + ": $" + player.chips
 
 function getRandomCard(){
   const randomNumber = Math.floor(Math.random() * 13) + 1
@@ -48,8 +56,10 @@ function renderGame(){
 };
 
 function newCard() {
-  const card = getRandomCard()
-  sum += card
-  cards.push(card)
-  renderGame()
+  if (isAlive === true && hasBlackJack === false) {
+    const card = getRandomCard()
+    sum += card
+    cards.push(card)
+    renderGame()
+  }
 }
